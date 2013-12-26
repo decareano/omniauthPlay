@@ -8,12 +8,13 @@
     <%= yield(:head) %>
   </head>
   <body>
+
+
     <div id="container">
       <div id="user_nav">
         <% if user_signed_in? %>
           Signed in as <%= current_user.email %>.<br />
           Not you? <%= link_to "Sign out", destroy_user_session_path %>
-        <% else %>
           <%= link_to "Sign In", authentications_path %>
         <% end %>
       </div>
@@ -23,5 +24,7 @@
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
     </div>
+
+
   </body>
 </html>
